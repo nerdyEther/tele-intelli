@@ -15,7 +15,7 @@ const SignupModal = ({ isOpen, onClose }) => {
       return;
     }
     try {
-      const response = await axios.post('http://localhost:7777/signup', {
+      const response = await axios.post('https://tele-intelli-production.up.railway.app/signup', {
         username,
         email,
         password,

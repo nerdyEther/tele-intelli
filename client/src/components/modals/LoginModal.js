@@ -14,7 +14,7 @@ const LoginModal = ({ isOpen, onClose }) => {
     e.preventDefault();
     setErrorMessage('');
     try {
-      const response = await axios.post('http://localhost:7777/login', { email, password });
+      const response = await axios.post('https://tele-intelli-production.up.railway.app/login', { email, password });
   
       console.log('Login response:', response.data); // For debugging
 
