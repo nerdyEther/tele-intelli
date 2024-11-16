@@ -32,7 +32,7 @@ const KeywordChart = ({ groupId, userId }) => {
       setError(null); // Reset error state
 
       try {
-        const response = await axios.get(`http://localhost:7777/keywordchart`, {
+        const response = await axios.get(`https://tele-intelli-production.up.railway.app/keywordchart`, {
           params: { userId, groupId },
         });
         const data = response.data;

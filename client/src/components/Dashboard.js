@@ -29,7 +29,7 @@ const Dashboard = () => {
     const fetchTotalMessages = async () => {
       if (!selectedGroup || !user) return;
       try {
-        const response = await axios.get('http://localhost:7777/totalMessages', {
+        const response = await axios.get('https://tele-intelli-production.up.railway.app/totalMessages', {
           params: { groupId: selectedGroup.group_id, userId: user.id }
         });
         setTotalMessages(response.data.totalMessages);
@@ -48,7 +48,7 @@ const Dashboard = () => {
         return;
       }
       try {
-        const response = await axios.get(`http://localhost:7777/groups?userId=${user.id}`);
+        const response = await axios.get(`https://tele-intelli-production.up.railway.app/groups?userId=${user.id}`);
         setGroups(response.data);
       } catch (error) {
         console.error('Error fetching groups:', error);
@@ -65,16 +65,16 @@ const Dashboard = () => {
       if (!selectedGroup) return;
       setLoadingDetails(true);
       try {
-        const response = await axios.get(`http://localhost:7777/gdetails?id=${selectedGroup.id}`);
+        const response = await axios.get(`https://tele-intelli-production.up.railway.app/gdetails?id=${selectedGroup.id}`);
         setGroupDetails(response.data);
         setKeywordsToRemove(response.data.keywords || []);
         
-        const keywordResponse = await axios.get(`http://localhost:7777/keywordchart`, {
+        const keywordResponse = await axios.get(`https://tele-intelli-production.up.railway.app/keywordchart`, {
           params: { groupId: selectedGroup.group_id, userId: user.id }
         });
         setKeywordData(keywordResponse.data);
         
-        const userCountResponse = await axios.get(`http://localhost:7777/userCounts?groupId=${selectedGroup.group_id}`);
+        const userCountResponse = await axios.get(`https://tele-intelli-production.up.railway.app/userCounts?groupId=${selectedGroup.group_id}`);
         setUserCountData(userCountResponse.data);
       } catch (error) {
         console.error('Error fetching group details:', error);
@@ -92,11 +92,11 @@ const Dashboard = () => {
       return;
     }
     try {
-      await axios.post(`http://localhost:7777/addKeyword`, {
+      await axios.post(`https://tele-intelli-production.up.railway.app/addKeyword`, {
         groupId: selectedGroup.group_id,
         keyword: newKeyword.trim(),
       });
-      const keywordResponse = await axios.get(`http://localhost:7777/keywordchart`, {
+      const keywordResponse = await axios.get(`https://tele-intelli-production.up.railway.app/keywordchart`, {
         params: { groupId: selectedGroup.group_id, userId: user.id },
       });
       setKeywordData(keywordResponse.data);
@@ -114,11 +114,11 @@ const Dashboard = () => {
       return;
     }
     try {
-      await axios.post(`http://localhost:7777/removeKeyword`, {
+      await axios.post(`https://tele-intelli-production.up.railway.app/removeKeyword`, {
         groupId: selectedGroup.group_id,
         keyword: selectedKeyword,
       });
-      const keywordResponse = await axios.get(`http://localhost:7777/keywordchart`, {
+      const keywordResponse = await axios.get(`https://tele-intelli-production.up.railway.app/keywordchart`, {
         params: { groupId: selectedGroup.group_id, userId: user.id },
       });
       setKeywordData(keywordResponse.data);
@@ -133,7 +133,7 @@ const Dashboard = () => {
   const handleInviteBot = async (groupId) => {
     try {
       // Assuming you have an API endpoint to handle the bot invitation
-      await axios.post('http://localhost:7777/invite-bot', {
+      await axios.post('https://tele-intelli-production.up.railway.app/invite-bot', {
         userId: user.id,
         groupId: groupId
       });
