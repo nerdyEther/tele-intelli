@@ -11,7 +11,7 @@ const FeatureCard = ({ icon: Icon, title, description }) => {
         rotateY: 5,
         scale: 1.02
       }}
-      className="relative group mb-6"
+      className="relative group mb-6 h-full"
     >
       {/* Magic UI inspired border beam */}
       <div className="absolute -inset-[1px] rounded-2xl bg-gradient-to-r from-blue-500 via-cyan-500 to-blue-500 opacity-0 
@@ -19,12 +19,12 @@ const FeatureCard = ({ icon: Icon, title, description }) => {
       <div className="absolute -inset-[1px] rounded-2xl bg-gradient-to-r from-blue-500 via-cyan-500 to-blue-500 opacity-0 
         group-hover:opacity-100 duration-500 group-hover:duration-200 animate-gradient-x" />
       
-      <div className="relative flex flex-col items-center p-8 rounded-2xl bg-white dark:bg-gray-800 shadow-lg">
+      <div className="relative flex flex-col items-center p-8 rounded-2xl bg-white dark:bg-gray-800 shadow-lg h-full min-h-[280px]">
         <div className="p-4 rounded-full bg-gradient-to-r from-blue-500/10 to-cyan-500/10 dark:from-blue-400/10 dark:to-cyan-400/10 mb-4">
           <Icon className="w-8 h-8 text-blue-500 dark:text-blue-400" />
         </div>
-        <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-2">{title}</h3>
-        <p className="text-gray-600 dark:text-gray-300 text-center">{description}</p>
+        <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-4">{title}</h3>
+        <p className="text-gray-600 dark:text-gray-300 text-center flex-grow">{description}</p>
       </div>
     </motion.div>
   );
@@ -50,7 +50,7 @@ const EnhancedFeatures = () => {
     {
       icon: Copy,
       title: "Easy Oversight",
-      description: "Manage multiple groups with ease."
+      description: "Manage multiple groups with ease"
     }
   ];
 

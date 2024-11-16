@@ -67,22 +67,22 @@ export default function LandingPage() {
               transition={{ duration: 0.6 }}
               className="text-center"
             >
-              <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-gray-800 dark:text-gray-100 mb-3 sm:mb-4 tracking-tight leading-tight">
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-2">
-                  <span>Secure Telegram</span>
-                  <WordRotate 
-                    className="bg-gradient-to-r from-blue-500 to-cyan-500 text-transparent bg-clip-text "
-                    words={["Users", "Chats", "Groups"]}
-                  />
-                </div>
-                <span className="text-gray-800 dark:text-gray-100">
-                  With Tele-Intelli
-                </span>
-              </h1>
-              <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto font-light leading-relaxed">
-                Enhance your group chats with advanced security features.
-                Stay protected against spam, scams, and unwanted content.
-              </p>
+              <h1 className="font-serif text-display-lg md:text-display-xl font-bold text-gray-800 dark:text-gray-100 mb-3 sm:mb-4 tracking-tight leading-tight">
+  <div className="flex flex-col sm:flex-row items-center justify-center gap-2">
+    <span>Secure Telegram</span>
+    <WordRotate 
+      className="bg-gradient-to-r from-blue-500 to-cyan-500 text-transparent bg-clip-text"
+      words={["Users", "Chats", "Groups"]}
+    />
+  </div>
+  <span className="text-gray-800 dark:text-gray-100">
+    With Tele-Intelli
+  </span>
+</h1>
+<p className="font-sans text-body-lg text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
+  Enhance your group chats with advanced security features.
+  Stay protected against spam, scams, and unwanted content.
+</p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <RainbowButton
                   size="lg"
