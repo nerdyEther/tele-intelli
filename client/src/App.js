@@ -4,6 +4,8 @@ import { AuthProvider } from './components/AuthContext';  // Import AuthProvider
 import LandingPage from './components/LandingPage';
 import Dashboard from './components/Dashboard';
 import ProtectedRoute from './components/ProtectedRoute';
+import NotFound from './components/NotFound';
+
 
 function App() {
   return (
@@ -20,6 +22,7 @@ function App() {
                 </ProtectedRoute>
               }
             />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
       </Router>
